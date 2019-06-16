@@ -62,12 +62,8 @@ private extension ImageViewController {
             let url = image.imageLargeURL
             else { return }
         
-        NetworkController.downloadImage(from: url) { [weak self] image in
-            guard
-                let self = self,
-                let image = image
-                else { return }
-            
+        let _ = NetworkController.downloadImage(from: url) { [weak self] image in
+            guard let self = self else { return }
             self.image?.imageLarge = image
             
             DispatchQueue.main.async {

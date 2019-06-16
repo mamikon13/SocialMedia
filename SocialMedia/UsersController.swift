@@ -55,12 +55,8 @@ class UsersController {
         guard let model = model else { return }
 
         var avatarURL = model.user?.avatarURL_50px
-        NetworkController.downloadImage(from: avatarURL) { [weak self] image in
-            guard
-                let self = self,
-                let image = image
-                else { return }
-            
+        let _ = NetworkController.downloadImage(from: avatarURL) { [weak self] image in
+            guard let self = self else { return }
             self.model?.user?.avatarSmall = image
             
             DispatchQueue.main.async {
@@ -69,12 +65,8 @@ class UsersController {
         }
         
         avatarURL = model.user?.avatarURL_200px
-        NetworkController.downloadImage(from: avatarURL) { [weak self] image in
-            guard
-                let self = self,
-                let image = image
-                else { return }
-            
+        let _ = NetworkController.downloadImage(from: avatarURL) { [weak self] image in
+            guard let self = self else { return }
             self.model?.user?.avatarLarge = image
         }
     }

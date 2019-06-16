@@ -241,7 +241,7 @@ extension ImagesViewController {
         let imageForCell = self.album?.images[indexPath.row]
         guard let unwrappedImageForCell = imageForCell else { return UITableViewCell() }
         
-        cell?.initCell(image: unwrappedImageForCell)
+        cell?.setupCell(image: unwrappedImageForCell)
         guard let unwrappedCell = cell else { return UITableViewCell() }
         
         return unwrappedCell

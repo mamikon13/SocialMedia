@@ -22,7 +22,7 @@ class ImageCell: UITableViewCell {
     var task: URLSessionTask?
     
     
-    func initCell(image: ImageVK) {
+    func setupCell(image: ImageVK) {
         
         coverActivityIndicator.startAnimating()
         

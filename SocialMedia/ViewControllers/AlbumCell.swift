@@ -21,7 +21,7 @@ class AlbumCell: UITableViewCell {
     var task: URLSessionTask?
     
     
-    func initCell(album: AlbumVK) {
+    func setupCell(album: AlbumVK) {
         
         coverActivityIndicator.startAnimating()
         

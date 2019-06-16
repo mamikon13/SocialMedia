@@ -282,7 +282,7 @@ extension AlbumsViewController {
         let albumForCell = self.model?.albums[indexPath.row]
         guard let unwrappedAlbumForCell = albumForCell else { return UITableViewCell() }
         
-        cell?.initCell(album: unwrappedAlbumForCell)
+        cell?.setupCell(album: unwrappedAlbumForCell)
         guard let unwrappedCell = cell else { return UITableViewCell() }
         
         return unwrappedCell
