@@ -17,16 +17,10 @@ class AuthorizeViewController: UIViewController {
     private var userManager: UsersController?
     
     override var preferredStatusBarStyle: UIStatusBarStyle { return .lightContent }
-
+    
     @IBOutlet weak var loginButton: UIButton!
     @IBAction func loginButton(_ sender: Any) {
         login()
-        
-        setupModel()
-        loadData() { [weak self] in
-            guard let self = self else { return }
-            self.performSegue(withIdentifier: "loginSucceed", sender: self)
-        }
     }
     
     
@@ -48,9 +42,9 @@ class AuthorizeViewController: UIViewController {
         }
     }
     
-
+    
     // MARK: - Navigation
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender:  Any?) {
         let vc = (segue.destination as? AlbumsViewController)
         
@@ -124,6 +118,11 @@ private extension AuthorizeViewController {
 extension AuthorizeViewController: VKSdkDelegate, VKSdkUIDelegate {
     
     func vkSdkAccessAuthorizationFinished(with result: VKAuthorizationResult!) {
+        setupModel()
+        loadData() { [weak self] in
+            guard let self = self else { return }
+            self.performSegue(withIdentifier: "loginSucceed", sender: self)
+        }
         return
     }
     

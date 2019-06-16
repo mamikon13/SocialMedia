@@ -18,20 +18,21 @@ class AlbumCell: UITableViewCell {
     @IBOutlet weak var createDate: UILabel!
     @IBOutlet weak var size: UILabel!
     
+    var task: URLSessionTask?
+    
     
     func initCell(album: AlbumVK) {
         
         coverActivityIndicator.startAnimating()
         
         title.text = album.title
-        createDate.text = CustomizedDateFormatter.fromDateToString(date: album.createDate)
+        createDate.text = String(date: album.createDate)
         size.text = String(album.countOfImage)
         
-        NetworkController.downloadImage(from: album.coverURL) { [weak self] image in
-            guard let self = self else { return }
+        task = NetworkController.downloadImage(from: album.coverURL) { [cover, coverActivityIndicator] image in
             DispatchQueue.main.async {
-                self.cover.image = image
-                self.coverActivityIndicator.stopAnimating()
+                cover?.image = image
+                coverActivityIndicator?.stopAnimating()
             }
         }
     }
@@ -39,6 +40,7 @@ class AlbumCell: UITableViewCell {
     
     override func prepareForReuse() {
         cover.image = nil
+        task?.cancel()
         super.prepareForReuse()
     }
 

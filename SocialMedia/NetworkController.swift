@@ -47,19 +47,39 @@ class NetworkController {
     }
     
     
-    class func downloadImage(from url: URL?, completionHandler: @escaping (UIImage?) -> ()) {
-        guard let url = url else { return }
-        
-        DispatchQueue.global(qos: .background).async {
-            guard
-                let imageData = try? Data(contentsOf: url),
-                let image = UIImage(data: imageData)
-                else {
+//    class func downloadImage(from url: URL?, completionHandler: @escaping (UIImage?) -> ()) {
+//        guard let url = url else { return }
+//
+//        DispatchQueue.global(qos: .background).async {
+//            guard
+//                let imageData = try? Data(contentsOf: url),
+//                let image = UIImage(data: imageData)
+//                else {
+//                    completionHandler(nil)
+//                    return
+//            }
+//            completionHandler(image)
+//        }
+//    }
+    
+    
+    class func downloadImage(from url: URL?, completionHandler: @escaping (UIImage?) -> ()) -> URLSessionTask? {
+        guard let url = url else { return nil }
+
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard let error = error else {
+                guard let image = UIImage(data: data!) else {
                     completionHandler(nil)
                     return
+                }
+                completionHandler(image)
+                return
             }
-            completionHandler(image)
+            print("Error within 'loadImage': " + error.localizedDescription)
         }
+        
+        task.resume()
+        return task
     }
-
+    
 }

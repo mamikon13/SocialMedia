@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		566F1E8BAED7EBE641EF10A5 /* Pods_SocialMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50F0B5A6112DAABD6C216967 /* Pods_SocialMedia.framework */; };
+		C71D869322B68E1800DFA2F3 /* StringExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71D869222B68E1800DFA2F3 /* StringExt.swift */; };
+		C71D869522B68EC100DFA2F3 /* DateExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = C71D869422B68EC100DFA2F3 /* DateExt.swift */; };
 		C726306922AAAF730087C0AC /* MyInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C726306822AAAF730087C0AC /* MyInfoViewController.swift */; };
 		C73DB818229DA91F0089AFB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73DB817229DA91F0089AFB8 /* AppDelegate.swift */; };
 		C73DB81D229DA91F0089AFB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C73DB81B229DA91F0089AFB8 /* Main.storyboard */; };
@@ -17,7 +19,6 @@
 		C73DB82C229E7D420089AFB8 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73DB82B229E7D420089AFB8 /* AlbumsViewController.swift */; };
 		C73DB830229E8A8D0089AFB8 /* ImageVK.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73DB82F229E8A8D0089AFB8 /* ImageVK.swift */; };
 		C73DB838229FFCF40089AFB8 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73DB837229FFCF40089AFB8 /* AlbumCell.swift */; };
-		C73DB83A22A00DA80089AFB8 /* CustomizedDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73DB83922A00DA70089AFB8 /* CustomizedDateFormatter.swift */; };
 		C73DB83C22A2EE700089AFB8 /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73DB83B22A2EE700089AFB8 /* Request.swift */; };
 		C73DB84222A326DB0089AFB8 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73DB84122A326DB0089AFB8 /* ImagesViewController.swift */; };
 		C73DB84622A3D5840089AFB8 /* UsersVK.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73DB84522A3D5840089AFB8 /* UsersVK.swift */; };
@@ -32,6 +33,8 @@
 /* Begin PBXFileReference section */
 		2987C00DD01311E5E55C5B8B /* Pods-SocialMedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialMedia.release.xcconfig"; path = "Target Support Files/Pods-SocialMedia/Pods-SocialMedia.release.xcconfig"; sourceTree = "<group>"; };
 		50F0B5A6112DAABD6C216967 /* Pods_SocialMedia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SocialMedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C71D869222B68E1800DFA2F3 /* StringExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExt.swift; sourceTree = "<group>"; };
+		C71D869422B68EC100DFA2F3 /* DateExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExt.swift; sourceTree = "<group>"; };
 		C726306822AAAF730087C0AC /* MyInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyInfoViewController.swift; sourceTree = "<group>"; };
 		C73DB814229DA91F0089AFB8 /* SocialMedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SocialMedia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C73DB817229DA91F0089AFB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +46,6 @@
 		C73DB82B229E7D420089AFB8 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		C73DB82F229E8A8D0089AFB8 /* ImageVK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageVK.swift; sourceTree = "<group>"; };
 		C73DB837229FFCF40089AFB8 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
-		C73DB83922A00DA70089AFB8 /* CustomizedDateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomizedDateFormatter.swift; sourceTree = "<group>"; };
 		C73DB83B22A2EE700089AFB8 /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		C73DB84122A326DB0089AFB8 /* ImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
 		C73DB84522A3D5840089AFB8 /* UsersVK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersVK.swift; sourceTree = "<group>"; };
@@ -86,6 +88,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C71D869122B68DF200DFA2F3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C71D869222B68E1800DFA2F3 /* StringExt.swift */,
+				C71D869422B68EC100DFA2F3 /* DateExt.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		C73DB80B229DA91F0089AFB8 = {
 			isa = PBXGroup;
 			children = (
@@ -115,9 +126,9 @@
 				C73DB84522A3D5840089AFB8 /* UsersVK.swift */,
 				C73DB84B22A4E5340089AFB8 /* AlbumsVK.swift */,
 				C73DB82F229E8A8D0089AFB8 /* ImageVK.swift */,
-				C73DB83922A00DA70089AFB8 /* CustomizedDateFormatter.swift */,
 				C73DB817229DA91F0089AFB8 /* AppDelegate.swift */,
 				C73DB81E229DA9200089AFB8 /* Assets.xcassets */,
+				C71D869122B68DF200DFA2F3 /* Extensions */,
 				C73DB81B229DA91F0089AFB8 /* Main.storyboard */,
 				C73DB820229DA9200089AFB8 /* LaunchScreen.storyboard */,
 				C73DB823229DA9200089AFB8 /* Info.plist */,
@@ -273,8 +284,9 @@
 				C73DB818229DA91F0089AFB8 /* AppDelegate.swift in Sources */,
 				C73DB830229E8A8D0089AFB8 /* ImageVK.swift in Sources */,
 				C73DB838229FFCF40089AFB8 /* AlbumCell.swift in Sources */,
-				C73DB83A22A00DA80089AFB8 /* CustomizedDateFormatter.swift in Sources */,
+				C71D869322B68E1800DFA2F3 /* StringExt.swift in Sources */,
 				C769159F22AD38060093CDE7 /* ImageCell.swift in Sources */,
+				C71D869522B68EC100DFA2F3 /* DateExt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

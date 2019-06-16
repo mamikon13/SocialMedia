@@ -141,7 +141,7 @@ extension ImagesViewController: NetworkDelegate {
             let token = token
             else { self.stopRefreshingUI(); return }
         
-        let imagesRequest = Request(.photos, params: ["album_id=\(album.id)&extended=1"], token: token)
+        let imagesRequest = Request(.photos, params: ["album_id=\(album.id)&extended=1&count=1000"], token: token)
         networkManager?.downloadData(for: imagesRequest) { [weak self] (imagesInAlbum) in
             guard
                 let self = self,

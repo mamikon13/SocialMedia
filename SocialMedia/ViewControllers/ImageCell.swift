@@ -19,21 +19,22 @@ class ImageCell: UITableViewCell {
     @IBOutlet weak var likes: UILabel!
     @IBOutlet weak var comments: UILabel!
     
+    var task: URLSessionTask?
+    
     
     func initCell(image: ImageVK) {
         
         coverActivityIndicator.startAnimating()
         
         imageText.text = image.text
-        loadDate.text = CustomizedDateFormatter.fromDateToString(date: image.loadDate)
+        loadDate.text = String(date: image.loadDate)
         likes.text = String(image.likesCount)
         comments.text = String(image.commentsCount)
         
-        NetworkController.downloadImage(from: image.imageSmallURL) { [weak self] image in
-            guard let self = self else { return }
+        task = NetworkController.downloadImage(from: image.imageSmallURL) { [cover, coverActivityIndicator] image in
             DispatchQueue.main.async {
-                self.cover.image = image
-                self.coverActivityIndicator.stopAnimating()
+                cover?.image = image
+                coverActivityIndicator?.stopAnimating()
             }
         }
     }
@@ -41,6 +42,7 @@ class ImageCell: UITableViewCell {
     
     override func prepareForReuse() {
         cover.image = nil
+        task?.cancel()
         super.prepareForReuse()
     }
 
